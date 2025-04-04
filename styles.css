@@ -1,0 +1,64 @@
+.custom-btn {
+    background-color: #007bff;  /* Solid button color */
+    border-color: #007bff;      /* Solid border color */
+    box-shadow: none;           /* No shadow initially */
+    transition: all 0.3s ease;  /* Smooth transition for shadow effect */
+}
+
+.custom-btn:hover {
+    background-color: #007bff;  /* Keep the solid color */
+    border-color: #007bff;      /* Keep the solid border color */
+    box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.5);  /* Shadow effect when hovered */
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.navbar, .btn-primary, .table, .form-control, .form-select {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+.navbar-brand, .nav-link {
+    color: #ffffff !important;
+}
+
+.nav-link:hover, .custom-btn:hover {
+    box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+input::placeholder {
+    color: #999;
+}
+
+/* Table rows */
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #2a2a2a;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.timer-circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 5px solid #007bff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    background-color: #1e1e1e;  /* Dark background */
+    color: #000000;             /* Neon cyan text */
+    box-shadow: 0 0 15px rgba(0, 255, 234, 0.3); /* Glow effect */
+}

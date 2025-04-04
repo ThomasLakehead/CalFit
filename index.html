@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏋️ Health & Fitness App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #121212;
+    color: #00ffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+    animation: fadeOut 1s ease-in-out 2.5s forwards;
+}
+
+.splash-content h1 {
+    font-size: 3rem;
+    animation: bounceIn 1s ease;
+}
+.splash-content p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.6;
+}
+
+@keyframes bounceIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeOut {
+    to { opacity: 0; visibility: hidden; }
+}
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .navbar, .btn-primary, .table, .form-control, .form-select {
+            background-color: #1e1e1e !important;
+            color: #e0e0e0 !important;
+            border-color: #333 !important;
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+        }
+        .nav-link:hover, .custom-btn:hover {
+            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+        .custom-btn {
+            background-color: #007bff;
+            border-color: #007bff;
+            transition: all 0.3s ease;
+        }
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .navbar-nav {
+            margin: 0 auto;
+        }
+        .nav-item {
+            margin: 0 15px;
+        }
+        .feature-box {
+            background-color: #1c1c1c;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+        .feature-box:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div id="splash-screen">
+        <div class="splash-content">
+            <h1>🚀 CalFit</h1>
+            <p>All in one app</p>
+        </div>
+    </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">🏠 Home</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="exercise.html">💪 Exercise</a></li>
+                <li class="nav-item"><a class="nav-link" href="calorie.html">🍎 Calories</a></li>
+                <li class="nav-item"><a class="nav-link" href="timer.html">⏱ Timer</a></li>
+                <li class="nav-item"><a class="nav-link" href="progress.html">📈 Progress</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center fade-in">🚀 Welcome to Your Health & Fitness Tracker</h1>
+
+    <div class="row mt-4 fade-in">
+        <div class="col-md-6 mb-4">
+            <div class="feature-box">
+                <h3>💪 Exercise Tracker</h3>
+                <p>Log your daily exercises and track your progress.</p>
+                <a class="btn btn-primary nav-link custom-btn" href="exercise.html">Track Exercise</a>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="feature-box">
+                <h3>🍎 Calorie Tracker</h3>
+                <p>Keep track of your daily calorie intake.</p>
+                <a class="btn btn-primary nav-link custom-btn" href="calorie.html">Log Calories</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4 fade-in">
+        <div class="col-md-6 mb-4">
+            <div class="feature-box">
+                <h3>⏱ Workout Timer</h3>
+                <p>Time your exercises with precision.</p>
+                <a class="btn btn-primary nav-link custom-btn" href="timer.html">Start Timer</a>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="feature-box">
+                <h3>📈 Progress</h3>
+                <p>View charts and logs of your weekly fitness journey.</p>
+                <a class="btn btn-primary nav-link custom-btn" href="progress.html">View Progress</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // You could add extra loading logic here if needed
+    setTimeout(() => {
+        document.getElementById("splash-screen").style.display = "none";
+    }, 3000);
+</script>
+
+</body>
+</html>
