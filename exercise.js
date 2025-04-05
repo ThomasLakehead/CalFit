@@ -1,12 +1,7 @@
 
-let workoutLogsByDay = {
-    day1: [],
-    day2: [],
-    day3: [],
-    day4: [],
-    day5: [],
-    day6: [],
-    day7: []
+let workoutLogsByDay = JSON.parse(localStorage.getItem('workoutLogsByDay')) || {
+    day1: [], day2: [], day3: [], day4: [],
+    day5: [], day6: [], day7: []
 };
 
 
@@ -35,6 +30,8 @@ function logWorkout() {
     };
 
     workoutLogsByDay[workoutDay].push(newWorkout);
+    localStorage.setItem('workoutLogsByDay', JSON.stringify(workoutLogsByDay));
+
     displayWorkouts();
     document.getElementById('workout-form').reset();
 
@@ -135,3 +132,7 @@ function deleteWorkout(index, dayKey) {
     displayWorkouts();
     showToast("🗑️ Workout deleted.");
 }
+window.onload = function () {
+    displayWorkouts();
+};
+
