@@ -133,6 +133,18 @@ function deleteWorkout(index, dayKey) {
     showToast("🗑️ Workout deleted.");
 }
 window.onload = function () {
+    const savedData = localStorage.getItem('workoutLogsByDay');
+    if (savedData) {
+        try {
+            workoutLogsByDay = JSON.parse(savedData);
+        } catch (e) {
+            console.error("Error parsing saved workout data:", e);
+            workoutLogsByDay = {
+                day1: [], day2: [], day3: [], day4: [],
+                day5: [], day6: [], day7: []
+            };
+        }
+    }
     displayWorkouts();
 };
 
