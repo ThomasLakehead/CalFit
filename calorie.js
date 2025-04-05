@@ -1,3 +1,4 @@
+//Calculates total and net calories for the week and logs the result
 function calculateCalories() {
     let totalCalories = 0;
     let dailyCalories = [];
@@ -23,7 +24,7 @@ function calculateCalories() {
 
     renderCalorieLogs(); 
 }
-
+//Renders the calorie history log table
 function renderCalorieLogs() {
     const logTable = document.getElementById('calorieLogTable');
     logTable.innerHTML = '';
@@ -49,6 +50,7 @@ function renderCalorieLogs() {
         cell3.appendChild(deleteButton);
     });
 }
+// Automatically render logs when the page loads
 window.onload = function () {
     renderCalorieLogs();
 };

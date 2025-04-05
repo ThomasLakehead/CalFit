@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!-- Title -->
     <title>💪 Exercise Tracker</title>
+     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Dark theme styling -->
     <style>
         body {
             background-color: #121212;
@@ -77,6 +80,7 @@
     </style>
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="index.html">🏠 Home</a>
@@ -93,7 +97,7 @@
             </div>
         </div>
     </nav>
-
+<!-- Useful workout links -->
     <div class="container mt-5 card-style fade-in">
         <h2 class="text-center">📚 Useful Links for Workouts</h2>
         <div class="row justify-content-center">
@@ -109,7 +113,7 @@
             </div>
         </div>
     </div>
-
+<!-- Create a workout form -->
     <div class="container mt-5 card-style fade-in">
         <h2 class="text-center">📝 Create Your Workout</h2>
         <form id="workout-form">
@@ -178,7 +182,7 @@
 
    
     <div id="workoutContainer" class="container mt-5 fade-in"></div>
-
+ <!-- Table of all logged workouts (Not working) -->
     <div class="container mt-5 card-style fade-in">
         <h3 class="text-center">📌 Logged Workouts</h3>
         <table class="table table-striped table-bordered table-dark text-center rounded shadow-sm">
@@ -232,6 +236,7 @@
             </div>
         </div>
     </div>
+    <!-- Toast and Export Function -->
     <script>
         function showToast(message) {
             document.getElementById('toastMessage').innerText = message;

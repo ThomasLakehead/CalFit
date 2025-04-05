@@ -1,10 +1,10 @@
-
+// Load workout data from localStorage or initialize empty logs for each day
 let workoutLogsByDay = JSON.parse(localStorage.getItem('workoutLogsByDay')) || {
     day1: [], day2: [], day3: [], day4: [],
     day5: [], day6: [], day7: []
 };
 
-
+// Function to log a new workout
 function logWorkout() {
     const workoutName = document.getElementById('workoutName').value;
     const exerciseType = document.getElementById('exerciseType').value;
@@ -46,12 +46,12 @@ function logWorkout() {
     
 }
 
-
+// Function to display all logged workouts by day
 function displayWorkouts() {
     const workoutContainer = document.getElementById('workoutContainer');
-    workoutContainer.innerHTML = ''; // Clear the container
+    workoutContainer.innerHTML = ''; 
 
-    // Loop through each day and create a table for it
+   
     for (let day = 1; day <= 7; day++) {
         const dayKey = `day${day}`;
         const dayWorkouts = workoutLogsByDay[dayKey];
@@ -108,7 +108,7 @@ function displayWorkouts() {
         }
     }
 }
-
+// Function to edit a workout entry
 function editWorkout(index, dayKey) {
     const workout = workoutLogsByDay[dayKey][index];
     if (workout) {
@@ -126,12 +126,13 @@ function editWorkout(index, dayKey) {
     }
 }
 
-
+// Function to delete a workout entry
 function deleteWorkout(index, dayKey) {
     workoutLogsByDay[dayKey].splice(index, 1);
     displayWorkouts();
     showToast("🗑️ Workout deleted.");
 }
+// Load saved data and display workouts on page load
 window.onload = function () {
     const savedData = localStorage.getItem('workoutLogsByDay');
     if (savedData) {

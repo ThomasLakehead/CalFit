@@ -1,20 +1,21 @@
+// Timer variables
 let timer;
 let milliseconds = 0, seconds = 0, minutes = 0, hours = 0;
 let isRunning = false;
 let logCount = 0;
-
+// Starts the timer 
 function startTimer() {
     if (!isRunning) {
         isRunning = true;
         timer = setInterval(updateTime, 10);
     }
 }
-
+// Stops/pauses the timer
 function stopTimer() {
     isRunning = false;
     clearInterval(timer);
 }
-
+// Resets the timer
 function resetTimer() {
     isRunning = false;
     clearInterval(timer);
@@ -24,7 +25,7 @@ function resetTimer() {
     hours = 0;
     document.getElementById("time").innerText = "00:00:00.000";
 }
-
+// Updates time values 
 function updateTime() {
     milliseconds += 10;
     if (milliseconds === 1000) {
@@ -39,7 +40,7 @@ function updateTime() {
         minutes = 0;
         hours++;
     }
-    
+    // Format time
     let formattedTime = 
         (hours < 10 ? "0" : "") + hours + ":" + 
         (minutes < 10 ? "0" : "") + minutes + ":" + 
@@ -48,7 +49,7 @@ function updateTime() {
     
     document.getElementById("time").innerText = formattedTime;
 }
-
+// Logs the current time
 function logTime() {
     const time = document.getElementById("time").innerText;
     let times = JSON.parse(localStorage.getItem('timerLogs')) || [];
@@ -57,6 +58,7 @@ function logTime() {
     localStorage.setItem('timerLogs', JSON.stringify(times));
     renderTimerLogs();
 }
+// Renders the saved timer logs
 function renderTimerLogs() {
     let logTableBody = document.getElementById("logTableBody");
     logTableBody.innerHTML = '';

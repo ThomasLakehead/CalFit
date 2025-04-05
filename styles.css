@@ -1,3 +1,5 @@
+
+/* Custom button styling */
 .custom-btn {
     background-color: #007bff;  
     border-color: #007bff;     
@@ -10,7 +12,7 @@
     border-color: #007bff;      
     box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.5);  
 }
-
+/* Dark mode base styles */
 body {
     background-color: #121212;
     color: #e0e0e0;
@@ -43,7 +45,7 @@ input::placeholder {
 .fade-in {
     animation: fadeIn 0.8s ease-in-out;
 }
-
+/* Fade-in animation */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
