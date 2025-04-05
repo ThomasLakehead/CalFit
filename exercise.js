@@ -1,4 +1,4 @@
-// Array to hold the logged workouts
+
 let workoutLogsByDay = {
     day1: [],
     day2: [],
@@ -9,7 +9,7 @@ let workoutLogsByDay = {
     day7: []
 };
 
-// Function to log a new workout
+
 function logWorkout() {
     const workoutName = document.getElementById('workoutName').value;
     const exerciseType = document.getElementById('exerciseType').value;
@@ -50,7 +50,6 @@ function logWorkout() {
 }
 
 
-// Function to display logged workouts
 function displayWorkouts() {
     const workoutContainer = document.getElementById('workoutContainer');
     workoutContainer.innerHTML = ''; // Clear the container
@@ -81,10 +80,8 @@ function displayWorkouts() {
             `;
             dayTable.appendChild(tableHeader);
             
-            // Create table body
             const tableBody = document.createElement('tbody');
 
-            // Loop through workouts for this day and add them to the table
             dayWorkouts.forEach((workout, index) => {
                 const hours = Math.floor(workout.duration / 60);
                 const minutes = workout.duration % 60;
@@ -107,18 +104,14 @@ function displayWorkouts() {
 
             dayTable.appendChild(tableBody);
 
-            // Create a header for the day
             const dayHeader = document.createElement('h3');
             dayHeader.innerText = `Workout Day ${day}`;
             workoutContainer.appendChild(dayHeader);
-
-            // Append the table for this day to the container
             workoutContainer.appendChild(dayTable);
         }
     }
 }
 
-// Function to edit a workout
 function editWorkout(index, dayKey) {
     const workout = workoutLogsByDay[dayKey][index];
     if (workout) {
@@ -137,7 +130,6 @@ function editWorkout(index, dayKey) {
 }
 
 
-// Function to delete a workout
 function deleteWorkout(index, dayKey) {
     workoutLogsByDay[dayKey].splice(index, 1);
     displayWorkouts();

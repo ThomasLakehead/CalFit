@@ -13,15 +13,15 @@ function calculateCalories() {
 
     alert('Your net calories this week: ' + netCalories);
 
-    // Save weekly values for chart on progress.html
+ 
     localStorage.setItem('weeklyNetCalories', JSON.stringify(dailyCalories.map(c => Math.round(c))));
 
-    // Save log entry
+    
     let log = JSON.parse(localStorage.getItem('calorieLogs')) || [];
     log.push({ netCalories });
     localStorage.setItem('calorieLogs', JSON.stringify(log));
 
-    renderCalorieLogs(); // Refresh table
+    renderCalorieLogs(); 
 }
 
 function renderCalorieLogs() {
