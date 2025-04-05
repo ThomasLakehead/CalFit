@@ -212,16 +212,17 @@
     }
 
     function displayGoals() {
-        const table = document.getElementById('goalTable');
-        table.innerHTML = '';
-        goals.forEach((goal, index) => {
-            table.innerHTML += `<tr>
-                <td>${goal.type}</td>
-                <td>${goal.weight}</td>
-                <td><button class='btn btn-danger btn-sm' onclick='deleteGoal(${index})'>🗑️ Delete</button></td>
-            </tr>`;
-        });
-    }
+    const table = document.getElementById('goalTable');
+    table.innerHTML = '';
+    goals.forEach((goal, index) => {
+        table.innerHTML += `<tr>
+            <td>${goal.type}</td>
+            <td>${goal.weight} ${goal.unit}</td>
+            <td><button class='btn btn-danger btn-sm' onclick='deleteGoal(${index})'>🗑️ Delete</button></td>
+        </tr>`;
+    });
+}
+
 
     function saveNotes() {
         const noteText = document.getElementById('progressNotes').value;
