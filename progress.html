@@ -122,8 +122,15 @@
         </div>
         <div class="mb-3">
             <label for="goalWeight" class="form-label">Target Weight</label>
-            <input type="number" id="goalWeight" class="form-control" placeholder="Enter weight (lbs or kg)">
+            <div class="input-group">
+                <input type="number" id="goalWeight" class="form-control" placeholder="Enter weight">
+                <select id="weightUnit" class="form-select" style="max-width: 100px;">
+                    <option value="lbs">lbs</option>
+                    <option value="kg">kg</option>
+                </select>
+            </div>
         </div>
+        
         <button class="btn btn-primary" type="button" onclick="saveGoal()">💾 Save Goal</button>
         <button class="btn btn-outline-light ms-2" type="button" onclick="exportGoals()">📂 Export Goals (JSON)</button>
     </form>
@@ -186,13 +193,16 @@
     }
 
     function saveGoal() {
-        const type = document.getElementById('goalType').value;
-        const weight = document.getElementById('goalWeight').value;
-        goals.push({ type, weight });
-        localStorage.setItem('fitnessGoals', JSON.stringify(goals));
-        displayGoals();
-        showToast('Goal Saved ✅');
-    }
+    const type = document.getElementById('goalType').value;
+    const weight = document.getElementById('goalWeight').value;
+    const unit = document.getElementById('weightUnit').value;
+
+    goals.push({ type, weight, unit });
+    localStorage.setItem('fitnessGoals', JSON.stringify(goals));
+    displayGoals();
+    showToast('Goal Saved ✅');
+}
+
 
     function deleteGoal(index) {
         goals.splice(index, 1);
